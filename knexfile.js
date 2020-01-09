@@ -4,9 +4,9 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      //database: process.env.DB_DATABASE,
-      //user: process.env.DB_USER,
-      //password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
       filename:'./data/dj.db3'
     },
     pool: {
