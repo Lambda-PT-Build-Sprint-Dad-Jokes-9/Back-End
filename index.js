@@ -7,7 +7,7 @@ server.get('/', (req, res) => {
     res.send(`
     <div>
         <h1>Welcome to DadJokes Api</h1>
-        <p>author: Austin Lynes</p>
+        <p> Here to fullfill all Dad Joke Needs <p>
     </div>
     `)
 })
