@@ -1,18 +1,19 @@
 const express = require('express')
-const server = express()
 const morgan = require('morgan')
 const helmet = require('helmet')
+const cors = require('cors')
 
-const authRotuer = require('./auth/auth-router')
+const server = express()
+const authRouter = require('./routes/auth/auth-router')
+const jokesRouter = require('./routes/jokes/joke-rotuer')
 
+// --middleware--
 server.use(express.json())
-server.use(morgan('combined'))
+server.use(cors())
 server.use(helmet())
+server.use(morgan('combined'))
 
-server.use('/auth', authRotuer)
-
-server.get('/api/jokes', (req, res) => {
-
-})
+server.use('/auth', authRouter)
+server.use('/api/jokes', jokesRouter)
 
 module.exports = server
