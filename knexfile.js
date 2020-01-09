@@ -4,9 +4,9 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      // database: process.env.DB_DATABASE,
-      // user: process.env.DB_USER,
-      // password: process.env.DB_PASSWORD
+      //database: process.env.DB_DATABASE,
+      //user: process.env.DB_USER,
+      //password: process.env.DB_PASSWORD,
       filename:'./data/dj.db3'
     },
     pool: {
@@ -25,22 +25,22 @@ module.exports = {
     },
 
   },
-  testing: {
-    client: 'sqlite3',
-    connection: {
-      filename: './data/test.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds',
-    },
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      }
-    }
-  }
-};
+//   testing: {
+//     client: 'sqlite3',
+//     connection: {
+//       filename: './data/test.db3',
+//     },
+//     useNullAsDefault: true,
+//     migrations: {
+//       directory: './data/migrations',
+//     },
+//     seeds: {
+//       directory: './data/seeds',
+//     },
+//     pool: {
+//       afterCreate: (conn, done) => {
+//         conn.run('PRAGMA foreign_keys = ON', done);
+//       }
+//     }
+//   }
+ };
