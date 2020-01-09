@@ -5,7 +5,7 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const secret = require('../config/secrets')
-const Users = require('../models/user-model')
+const Users = require('../models/users-model')
 
 router.post('/login', (req, res) => {
     const credentials = req.body
