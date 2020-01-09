@@ -48,3 +48,4 @@ after login you should get a token, in response.data whatever you call your axio
 }
 after a succesful register you should be able to log into the app with your information! remember on Login to save that Token! 
 
+JOKE SCHEMA's
