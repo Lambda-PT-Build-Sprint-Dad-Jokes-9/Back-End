@@ -1,6 +1,7 @@
 exports.seed = function(knex) {
     // Deletes ALL existing entries
-    return knex('saved_joke').truncate()
+    return knex('saved_joke')
+    .del()
       .then(function () {
         // Inserts seed entries
         return knex('saved_joke').insert([
