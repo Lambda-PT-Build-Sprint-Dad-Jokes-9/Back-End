@@ -1,46 +1,23 @@
-require('dotenv').config()
+require('dotenv').config();
 module.exports = {
-
   development: {
     client: 'sqlite3',
-    connection: {
-      database: process.env.DB_DATABASE,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      filename:'./data/dj.db3'
-    },
-    pool: {
-      min:2,
-      max:10,
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      }
-    },
-    useNullAsDefault:true,
+    //This was updated with DB for Heroku
+    connection: { filename: './data/auth.db3' },
+    useNullAsDefault: true,
     migrations: {
-      directory: './data/migrations'
+      directory: './data/migrations',
+      tableName: 'dbmigrations',
     },
-    seeds: {
-      directory: './data/seeds'
-    },
-
+    seeds: { directory: './data/seeds' },
   },
-//   testing: {
-//     client: 'sqlite3',
-//     connection: {
-//       filename: './data/test.db3',
-//     },
-//     useNullAsDefault: true,
-//     migrations: {
-//       directory: './data/migrations',
-//     },
-//     seeds: {
-//       directory: './data/seeds',
-//     },
-//     pool: {
-//       afterCreate: (conn, done) => {
-//         conn.run('PRAGMA foreign_keys = ON', done);
-//       }
-//     }
-//   }
- };
+//This part is done w POSTGRES
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: './data/migrations',
+    },
+    seeds: { directory: './data/seeds' },
+  },
+};

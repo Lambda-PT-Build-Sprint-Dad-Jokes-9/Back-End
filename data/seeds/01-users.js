@@ -1,4 +1,7 @@
+const bcrypt = require("bcryptjs");
+
 exports.seed = function (knex) {
+  
     // Deletes ALL existing entries
     return knex('user').truncate()
       .then(function () {
@@ -7,17 +10,17 @@ exports.seed = function (knex) {
           {
             id: 1,
             username: 'DadBOT101',
-            password: 'Password350'
+            password: bcrypt.hashSync("Password350", 12)
           },
           {
             id: 2,
             username: 'DadBOT203',
-            password: 'Password370'
+            password: bcrypt.hashSync("Password370", 12)
           },
           {
             id: 3,
             username: 'DadBOT204',
-            password: 'Password360'
+            password: bcrypt.hashSync("Password360", 12)
           },
         ]);
       });
