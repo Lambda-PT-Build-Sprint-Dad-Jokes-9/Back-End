@@ -14,6 +14,7 @@ router.post('/register', (req, res) => {
     user.password = hash
 
     Users.add(user).then((_user) => {
+        console.log(_user);
         if (!_user) {
             res.status(400).json({ messege: 'Something went wrong with the Registration' })
         } else {
