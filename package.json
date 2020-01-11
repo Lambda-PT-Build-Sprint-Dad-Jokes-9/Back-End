@@ -7,7 +7,8 @@
     "server": "nodemon index.js",
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
-    "run-seeds": "knex seed:run "
+    "run-seeds": "knex seed:run ",
+    "test": "jest"
   },
   "repository": "https://github.com/Lambda-PT-Build-Sprint-Dad-Jokes-9/Back-End.git",
   "author": "<d15.landon@gmail.com>",
