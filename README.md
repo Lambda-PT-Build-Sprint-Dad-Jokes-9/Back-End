@@ -48,4 +48,70 @@ after login you should get a token, in response.data whatever you call your axio
 }
 after a succesful register you should be able to log into the app with your information! remember on Login to save that Token! 
 
+
 JOKE SCHEMA's
+
+
+----- these are the endpoints used for Jokes
+
+----- Jokes --- Public
+
+    '/api/jokes'
+
+----- will return all the PUBLIC tagged Jokes
+
+
+-----  BELOW HERE REQUIRES TOKEN IN HEADER FOR AUTHORIZATION 
+
+
+
+----- Jokes --- ALL
+
+    '/api/jokes/all'
+
+----- will return all Jokes
+
+
+-----  addJoke
+
+
+    '/api/jokes/:username'
+
+----- requires the following schema as body
+
+{
+    "question":"",   //Required
+    "answer":"",    //Required
+    "public":false
+}
+
+
+
+----- saveJoke
+
+
+    '/api/jokes/:username/:joke_id'
+
+
+
+
+----- delJoke
+
+
+    '/api/jokes/:joke_id'
+
+
+
+----- editJoke
+
+
+    '/api/:joke_id'
+
+----- requires the following schema as body
+{
+    "question":"",   //Required
+    "answer":"",    //Required
+    "public":false
+}
+
+
